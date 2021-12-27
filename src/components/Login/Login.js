@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from 'react-router';
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 import './Login.css';
 
 const Login = () => {
@@ -37,7 +37,7 @@ const Login = () => {
 
         if(!login && user.email && user.password){
             setTimeout(() => {
-                axios.post('http://localhost:5000/signup', formData, {
+                axios.post('https://lit-garden-34641.herokuapp.com/signup', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -71,7 +71,7 @@ const Login = () => {
         }
         else if(login){
             setTimeout(() => {
-                axios.post('http://localhost:5000/login', formData, {
+                axios.post('https://lit-garden-34641.herokuapp.com/login', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

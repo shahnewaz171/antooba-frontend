@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Loading from '../../Loading.jsx';
 import './Products.css';
 
@@ -7,7 +7,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get("https://lit-garden-34641.herokuapp.com/products")
         .then(res => {
             if (res) {
                 setProducts(res.data);

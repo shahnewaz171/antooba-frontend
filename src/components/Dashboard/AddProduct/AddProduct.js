@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast, ToastContainer } from 'react-toastify';
 import Sidebar from '../Sidebar/Sidebar';
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
 import './AddProduct.css';
 
 const AddService = () => {
@@ -27,7 +27,7 @@ const AddService = () => {
         formData.append('title', info.title);
         formData.append('price', info.price);
 
-        axios.post('http://localhost:5000/addProduct', formData)
+        axios.post('https://lit-garden-34641.herokuapp.com/addProduct', formData)
         .then(res => {
             if(res){
                 toast.dismiss(toastId.current);

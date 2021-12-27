@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 
@@ -13,7 +13,7 @@ const Navbar = () => {
         let mounted = true;
         if(user != null) {
             setUser(user);
-            fetch('http://localhost:5000/isAdmin', {
+            fetch('https://lit-garden-34641.herokuapp.com/isAdmin', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
