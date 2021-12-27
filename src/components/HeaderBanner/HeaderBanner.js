@@ -20,7 +20,7 @@ const HeaderBanner = () => {
         <>
             <div className="container mt-4">
                 <div className="header-banner-slider">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -31,8 +31,8 @@ const HeaderBanner = () => {
                                 <img src={localImages.bannerImg1} className="d-block w-100" alt="..." />
                                 <div className="carousel-caption d-md-block dark-overlay">
                                    <div className="banner-details px-5">
-                                    <h2 className="text-uppercase">TFP solution Bangladesh</h2>
-                                        <p>IoT,Block Chain,Visa Management eco System, Artificial inteligence</p>
+                                    <h2 className="text-uppercase">Antooba Pvt Ltd Bangladesh</h2>
+                                        <p>As Antooba Technologies Ltd is a Tech-based Company so we propose each consumer</p>
                                    </div>
                                 </div>
                             </div>
@@ -40,8 +40,8 @@ const HeaderBanner = () => {
                                 <img src={localImages.bannerImg2} className="d-block w-100" alt="..." />
                                 <div className="carousel-caption d-md-block dark-overlay">
                                    <div className="banner-details px-5">
-                                    <h2 className="text-uppercase">TFP solution Bangladesh</h2>
-                                        <p>IoT,Block Chain,Visa Management eco System, Artificial inteligence</p>
+                                    <h2 className="text-uppercase">Antooba Pvt Ltd Bangladesh</h2>
+                                        <p>Antooba provide the best App for any user</p>
                                    </div>
                                 </div>
                             </div>
@@ -49,8 +49,8 @@ const HeaderBanner = () => {
                                 <img src={localImages.bannerImg3} className="d-block w-100" alt="..." />
                                 <div className="carousel-caption d-none d-md-block dark-overlay">
                                    <div className="banner-details px-5">
-                                    <h2 className="text-uppercase">TFP solution Bangladesh</h2>
-                                        <p>IoT,Block Chain,Visa Management eco System, Artificial inteligence</p>
+                                    <h2 className="text-uppercase">Antooba Pvt Ltd Bangladesh</h2>
+                                        <p>In the modern era, Website is one of the most popular technology for make a business easier</p>
                                    </div>
                                 </div>
                             </div>

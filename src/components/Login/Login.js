@@ -60,28 +60,68 @@ const Login = () => {
                     }
                 })
                 .then(res => {
-                    if(res){
+                    if(res.data.error){
                         setDisable(false);
-                        toast.success("Success!", {
+                        toast.dismiss(toastId.current);
+                        toast.error(res.data.error, {
                             theme: "dark",
                             position: toast.POSITION.TOP_LEFT,
-                            autoClose: 2000
+                            autoClose: 3000
+                        });
+                    }
+                    else{
+                        setDisable(false);
+                        toast.success("Success", {
+                            theme: "dark",
+                            position: toast.POSITION.TOP_LEFT,
+                            autoClose: 3000
                         });
                         reset();
                         setLogin(true);
-                        console.log(res);
                     }
                 })
                 .catch(error => {
-                    console.error(error)
+                    console.error(error);
                 })
             }, 1000);
             setDisable(true);
         }
         else if(login){
-
-            // window.localStorage.setItem("userInfo",  JSON.stringify(singleUser));
-            // history.replace(from);
+            setTimeout(() => {
+                axios.post('http://localhost:5000/login', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(res => {
+                    if(res.data.error){
+                        setDisable(false);
+                        toast.dismiss(toastId.current);
+                        toast.error(res.data.error, {
+                            theme: "dark",
+                            position: toast.POSITION.TOP_LEFT,
+                            autoClose: 3000
+                        });
+                    }
+                    else{
+                        setDisable(false);
+                        toast.success("User Authorized", {
+                            theme: "dark",
+                            position: toast.POSITION.TOP_LEFT,
+                            autoClose: 3000
+                        });
+                        const { token } = res.data;
+                        window.localStorage.setItem('jwtToken', token);
+                        window.localStorage.setItem('userInfo', JSON.stringify(res.data?.user));
+                        console.log(res.data);
+                        history.replace(from);
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+            }, 1000);
+            setDisable(true);
         }
     };
 
@@ -127,7 +167,10 @@ const Login = () => {
                                                 {errors.c_password && errors.c_password.type === "validate" && <span className="text-danger">Password does not match</span>}
                                             </div>}
                                             <div className="form-group mb-3 pt-3">
-                                                <button disabled={disable} type="submit" className={"submit-btn text-center text-white fw-bolder text-uppercase "+ (disable ? "bg-secondary" : "")} >{!login ? "Register" : "Login"}</button>
+                                                {!login && <button disabled={disable} type="submit" className={"submit-btn text-center text-white fw-bolder "+ (disable ? "bg-secondary" : "")} >{ disable ? "Registering...": "Register" }</button>
+                                                }
+                                                {login && <button disabled={disable} type="submit" className={"submit-btn text-center text-white fw-bolder "+ (disable ? "bg-secondary" : "")} >{ disable ? "Signing In...": "Sign In" }</button>
+                                                }
                                             </div>
                                         </form>
                                     </div>

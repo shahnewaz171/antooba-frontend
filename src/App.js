@@ -26,7 +26,7 @@ function App() {
               </PrivateRoute>
               <Route exact path="/">
                 <Navbar />
-                  <Login />
+                <Login />
               </Route>
               <Route exact path="/signup">
                 <Navbar />
