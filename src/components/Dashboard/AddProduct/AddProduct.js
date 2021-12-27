@@ -22,7 +22,6 @@ const AddService = () => {
 
     const onSubmit = () =>{
         const formData = new FormData()
-        console.log(file)
         formData.append('file', file);
         formData.append('title', info.title);
         formData.append('price', info.price);

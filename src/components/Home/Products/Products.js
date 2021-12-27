@@ -11,7 +11,6 @@ const Products = () => {
         .then(res => {
             if (res) {
                 setProducts(res.data);
-                console.log(res);
             }
         })
         .catch(error => "");
