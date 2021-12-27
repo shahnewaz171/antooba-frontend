@@ -1,15 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Redirect, useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import './Login.css';
 
 const Login = () => {
     const [login, setLogin] = useState(false);
     const [user, setUser] = useState(null);
-    const [getUser, setGetUser] = useState([]);
     const [disable, setDisable] = useState(false);
     const history = useHistory();
     const location = useLocation();
@@ -20,21 +18,6 @@ const Login = () => {
     const toastId = useRef(null);
     const password = useRef();
     password.current = watch('password');
-
-    // useEffect(() => {
-    //     let mounted = true;
-    //     axios.get("http://localhost:5000/users")
-    //         .then(res => {
-    //             if (mounted && res) {
-    //                 setGetUser(res.data);
-    //             }
-    //         })
-    //         .catch(error => "")
-    //     return () => {
-    //         mounted = false
-    //     }
-    // }, [login])
-
 
     const handleBlur = (e) => {
         const userInfo = { ...user };
@@ -113,7 +96,6 @@ const Login = () => {
                         const { token } = res.data;
                         window.localStorage.setItem('jwtToken', token);
                         window.localStorage.setItem('userInfo', JSON.stringify(res.data?.user));
-                        console.log(res.data);
                         history.replace(from);
                     }
                 })

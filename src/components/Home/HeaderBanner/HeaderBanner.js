@@ -1,20 +1,8 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import localImages from "../localImages";
 import './HeaderBanner.css';
+import localImages from '../../localImages';
 
 const HeaderBanner = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        autoplaySpeed: 3000,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 0
-    };
 
     return (
         <>

@@ -1,0 +1,28 @@
+.pad{
+    padding: 16px;
+}
+.addProduct-info{
+    background: #f2f2f3;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    width: 81.7%;
+    margin-left: auto;
+    padding-bottom: 2rem;
+}
+.border-radius{
+    border-radius: 10px;
+}
+@media (min-width: 768px){
+    .title-name{
+        margin-left: 6rem !important;
+    }
+    .width{
+        width: 50%;
+    }
+}
+@media (max-width: 767px){
+    .width{
+        width: 100%;
+    }
+}    
