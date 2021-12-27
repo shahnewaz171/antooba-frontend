@@ -1,0 +1,71 @@
+a{
+    text-decoration: none;
+}
+.login-signup{
+    padding: 60px 0px 60px;
+}
+.login-signup .tab-menu .nav-tabs{
+    border: 0px;
+}
+.login-signup .tab-menu .nav-tabs .nav-link{
+    border: 0px;
+    margin: 0px;
+    padding: 10px 0px;
+    width: 50%;
+    text-align: center;
+    background: #143250;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+}
+.login-signup .tab-menu .nav-tabs .nav-link.active{
+    background-color: #483e68;
+}
+.login-area{
+    padding: 30px 30px 39px;
+    box-shadow: 0px 5px 20px rgb(0 0 0 / 10%);
+}
+.login-area .header-area .title{
+    font-size: 30px;
+    line-height: 40px;
+    color: #483e68;
+}
+.login-area .login-form .form-group span{
+    font-size: 14px;
+}
+.login-area .login-form .form-group input{
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.login-area .login-form .form-group input:focus{
+    box-shadow: none;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+.login-area .submit-btn{
+    width: 100%;
+    height: 50px;
+    background-color: #483e68;
+    border: 1px solid #483e68;
+}
+.login-area .social-area h5{
+    color: #483e68;
+}
+.login-area .social-area p{
+    font-size: 20px;
+    font-weight: 300;
+    color: #143250;
+}
+.login-area .social-area .social-link li{
+    display: inline-block;
+}
+.login-area .social-area .social-link li span{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 41px;
+    background-color: #d1062c;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+}
